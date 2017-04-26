@@ -1,4 +1,4 @@
-#!/usr/bin/perl
+#!/usr/bin/perl --
 use Term::ANSIColor;
 use Sys::Hostname;
 use HTTP::Request::Common;
