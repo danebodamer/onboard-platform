@@ -58,7 +58,8 @@ sub installUIM {
         print colored(['','white','on_blue'],"----------------------------------------------------------------------") . "\n\n";
 		
 		print colored(['','black','on_white'], "Running UIM HUB silent installation...") . "\n\n";
-		
+		system("curl -u http://$nmtunip/uimhome/setupFiles/unix/nimldr.tar.Z -o /root/im_firmware/uim/nimldr.tar.Z;cd /root/im_firmware/uim/;tar -xvf nimldr.tar.Z");
+		system("curl -u http://$nmtunip/uimhome/archiveFiles/install_LINUX_23_64.zip -o /root/im_firmware/uim/install_LINUX_23_64.zip;cd /root/im_firmware/uim/;tar -xvf install_LINUX_23_64.zip");
 		$output = `/root/im_firmware/uim/nimldr/LINUX_23_64/nimldr -D UIM_domain -H UIM_remotehub -p /opt/CA/nimsoft -t /opt/CA/nimsoft/tmp -o 48003 -R$ipaddr -F /root/im_firmware/uim -E -i > /dev/null 2>&1`;
 		$output = `/bin/cp -rf /root/im_firmware/uim/archive /opt/CA/nimsoft/ > /dev/null 2>&1`;
 		$output = `service nimbus stop`;

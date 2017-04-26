@@ -32,7 +32,7 @@ my $pinger  = Net::Ping->new('icmp', $timeout);
 if ($pinger->ping($host)) {
 	$done = 1;
 	print "\n\n";
-	print "OpenVPN Tunnel is Active\n";
+	print "OpenVPN Tunnel is Active\n\n";
 }else{
 	$done = 0;
 }

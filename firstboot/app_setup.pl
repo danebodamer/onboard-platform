@@ -79,6 +79,7 @@ my $select = '_';
 while (! grep (/$select/, ('a','b','c','d','e','f','g','x','q')) and (! -f "/root/firstboot/app_setup_done" )) {
 	$select = menuSelect;
 
+###  UIM Remote Hub
 	if (($select eq 'a') && (! grep (/a/, $selecthist ))) {
 		system("/root/firstboot/installVPN.pl");
 		system("/root/firstboot/installUIM.pl",0);
@@ -86,6 +87,7 @@ while (! grep (/$select/, ('a','b','c','d','e','f','g','x','q')) and (! -f "/roo
 		$select = '_';
 	}elsif (($select eq 'a') && (grep (a, $selecthist ))) { print colored(['','white','on_blue'],"UIM has been installed already, Press Return ...\n"); $done = <STDIN>; $select = '_'; }
 
+###  NFA Harvester
 	if (($select eq 'b')  && (! grep (/b/, $selecthist ))) {
 		system("/root/firstboot/installVPN.pl");
 		system("/root/firstboot/installNFA.pl",0);
@@ -93,13 +95,15 @@ while (! grep (/$select/, ('a','b','c','d','e','f','g','x','q')) and (! -f "/roo
 		$select = '_';
 	}elsif (($select eq 'b') && (grep (/b/, $selecthist ))) { print colored(['','white','on_blue'],"NFA has been installed already, Press Return ...\n"); $done = <STDIN>; $select = '_'; }
 
+### APM Gateway
 	if (($select eq 'c')  && (! grep (/c/, $selecthist ))) {
 		system("/root/firstboot/installVPN.pl");
 		system("/root/firstboot/installAPM.pl",0);
 		$selecthist = $selecthist . ' c';
 		$select = '_';
 	}elsif (($select eq 'c') && (grep (/c/, $selecthist ))) { print colored(['','white','on_blue'],"APM Gateway has been installed already, Press Return ...\n"); $done = <STDIN>; $select = '_'; }
-	
+
+###	Spectrum SDC
 	if (($select eq 'd') && (! grep (/d/, $selecthist ))) {
 		system("/root/firstboot/installVPN.pl");
 		system("/root/firstboot/installSDC.pl",0);
@@ -107,13 +111,15 @@ while (! grep (/$select/, ('a','b','c','d','e','f','g','x','q')) and (! -f "/roo
 		$select = '_';
 	}elsif (($select eq 'd') && (grep (d, $selecthist ))) { print colored(['','white','on_blue'],"Spectrum has been installed already, Press Return ...\n"); $done = <STDIN>; $select = '_'; }
 
+###  PM Data Collector
 		if (($select eq 'e') && (! grep (/e/, $selecthist ))) {
 		system("/root/firstboot/installVPN.pl");
 		system("/root/firstboot/installDC.pl",0,0,$datunip);
 		$selecthist = $selecthist . ' e';
 		$select = '_';
 	}elsif (($select eq 'e') && (grep (e, $selecthist ))) { print colored(['','white','on_blue'],"Spectrum has been installed already, Press Return ...\n"); $done = <STDIN>; $select = '_'; }
-	
+
+###  ADA Gateway
 	if (($select eq 'f') && (! grep (/f/, $selecthist ))) {
 		system("/root/firstboot/installVPN.pl");
 		system("/root/firstboot/installADA.pl",0);
@@ -121,6 +127,7 @@ while (! grep (/$select/, ('a','b','c','d','e','f','g','x','q')) and (! -f "/roo
 		$select = '_';
 	}elsif (($select eq 'f') && (grep (f, $selecthist ))) { print colored(['','white','on_blue'],"Spectrum has been installed already, Press Return ...\n"); $done = <STDIN>; $select = '_'; }	
 
+### SOI Gateway
 	if (($select eq 'g') && (! grep (/g/, $selecthist ))) {
 		system("/root/firstboot/installVPN.pl");
 		system("/root/firstboot/installSOI.pl",0);
@@ -128,6 +135,7 @@ while (! grep (/$select/, ('a','b','c','d','e','f','g','x','q')) and (! -f "/roo
 		$select = '_';
 	}elsif (($select eq 'g') && (grep (g, $selecthist ))) { print colored(['','white','on_blue'],"Spectrum has been installed already, Press Return ...\n"); $done = <STDIN>; $select = '_'; }
 
+### ALL
 	if (($select eq 'x') && (! grep (/x/, $selecthist ))) {
 		system("/root/firstboot/installVPN.pl");
 		system("/root/firstboot/installAPM.pl",0);
