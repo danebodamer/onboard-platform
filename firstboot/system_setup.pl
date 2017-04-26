@@ -8,7 +8,7 @@
 ## 01/10/14 - Dane - Adding logic for Nimsoft Monitor
 ## 12/17/14 - Dane - Removed some logic for sysedge and hosts file
 ## 09/02/16 - Dane - Streamlined iptables and host entry logic - 3.2 major release
-##
+## 04/26/17 - Dane - Added -- for bad interpreter error
 #################################################################################################
 
 ### Main Logic ###
