@@ -157,8 +157,8 @@ while (! grep (/$select/, ('a','b','c','d','e','f','g','x','q')) and (! -f "/roo
 }
 
 ### Post Product Setup ###
-`mount.cifs //5.6.0.20/launch /mnt/launch -o user=Administrator,password=CAdemo123`;
-`sed -i \'s/#GATEWAY#/$ipaddr/g\' /mnt/launch/wwwroot/index.html`;
+#`mount.cifs //5.6.0.20/launch /mnt/launch -o user=Administrator,password=CAdemo123`;
+#`sed -i \'s/#GATEWAY#/$ipaddr/g\' /mnt/launch/wwwroot/index.html`;
 
 ### Cron for PMstatus
         if (-e "/var/spool/cron/root") {
